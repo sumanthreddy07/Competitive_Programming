@@ -4,7 +4,13 @@
 #include<cmath>
 
 using namespace std;
-
+int min(int a,int b)
+{
+    if(a<b)
+        return a;
+    else
+        return b;
+}
 int main()
 {
     int *a;
@@ -21,8 +27,8 @@ int main()
     for(i=0;i<n;i++)
         for(j=i;j<n;j++)
         {
-                if(volume<abs((j-i)*(a[j]-a[i])))
-                    volume=abs((j-i)*(a[j]-a[i]));
+                if(volume<abs((j-i)*(min(a[j],a[i]))))
+                    volume=abs((j-i)*(min(a[j],a[i])));
         }
 
     cout<<"volume is: "<<volume;
