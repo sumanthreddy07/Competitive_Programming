@@ -1,8 +1,5 @@
 #include <bits/stdc++.h>
-#include <vector>
-#include <string>
-#include <algorithm>
- 
+
 using namespace std;
  
 int main()
@@ -12,7 +9,9 @@ int main()
     cin>>t;
     while(t--)
     {
-
+        long n;
+        cin>>n;
+        cout<<n<<endl;
 
     }
     return 0;

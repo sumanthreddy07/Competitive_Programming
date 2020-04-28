@@ -1,7 +1,4 @@
 #include <bits/stdc++.h>
-#include <vector>
-#include <string>
-#include <algorithm>
  
 using namespace std;
  
@@ -9,10 +6,15 @@ int main()
 {
  
     long int t;
+    long long int num;
     cin>>t;
     while(t--)
     {
+        cin>>num;
+        if(num%2==0)
+            num--;
 
+        cout<<num<<" ";
 
     }
     return 0;
