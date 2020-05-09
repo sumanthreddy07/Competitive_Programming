@@ -14,11 +14,20 @@ using namespace std;
 int main()
 {
  
-    L t,i,j,flag=0,sum=0;
+    L t,n,k,flag=0,sum=0;
     cin>>t;
     while(t--)
     {
+        cin>>n>>k;
 
+        if(n>k)
+            cout<<k<<endl;
+        else
+        {
+            flag=(k-1)/(n-1);
+            sum= flag+k;
+            cout<<sum<<endl;
+        }
 
     }
     return 0;
