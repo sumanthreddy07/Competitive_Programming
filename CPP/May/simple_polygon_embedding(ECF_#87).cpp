@@ -11,16 +11,26 @@
 #define pi 3.14159265358979323846
 using namespace std;
  
-using namespace std;
- 
 int main()
 {
- 
-    L t,i,j,flag=0,sum=0;
+    cout<<setprecision(9)<<fixed;
+
+    L t,i,j,flag=0;
+    double sum=0;
     cin>>t;
     while(t--)
     {
-
+        sum=0;
+        L n;
+        cin>>n;
+        
+        run(i,0,n/2)
+        {
+            sum+=( cos( pi/(n)*i) )*2;
+        }    
+        sum--;
+        cout<<sum<<endl;
+        
 
     }
     return 0;
