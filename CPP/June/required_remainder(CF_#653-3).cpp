@@ -11,16 +11,25 @@
 #define PAIR pair<long,long>
 #define pi 3.14159265358979323846
 using namespace std;
-  
+ 
+using namespace std;
+ 
 int main()
 {
  
-    L t,i,j,flag=0,sum=0;
+    LL t,i,j,flag=0,sum=0;
     cin>>t;
     while(t--)
     {
+        LL x,y,n;
+        cin>>x>>y>>n;
 
-
+        sum=(n/x)*x+y;
+        if(sum>n)
+            cout<<sum-x<<endl;
+        else
+            cout<<sum<<endl;
+        
     }
     return 0;
 }
