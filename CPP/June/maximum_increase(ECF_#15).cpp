@@ -15,12 +15,27 @@ using namespace std;
 int main()
 {
  
-    L t,i,j,flag=0,sum=0;
+    L t,i,j=1,flag=0,sum=0;
     cin>>t;
-    while(t--)
+    
+    vector<LL> arr(t);
+    run(i,0,t-1)
+        cin>>arr[i];
+
+    run(i,1,t-1)
     {
-
-
+        if(arr[i]<=arr[i-1])
+        {
+            sum=max(sum,j);
+            j=1;
+        }
+        else
+        {
+            j++;
+        }
     }
+    sum=max(sum,j);
+
+    cout<<sum<<endl;
     return 0;
 }
