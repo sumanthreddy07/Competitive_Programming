@@ -30,6 +30,6 @@
 *.exe
 *.out
 *.app
-
+* a.out
 # files
 working_directory
