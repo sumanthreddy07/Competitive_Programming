@@ -1,7 +1,7 @@
 import os
 import re
 
-path = "/home/sumanth/Coding/GIT/Competitive_Programming/CPP/July/Week_1"
+path = "/home/Competitive_Programming/CPP/July/Week_1"
 
 for file in os.listdir(path):
 
