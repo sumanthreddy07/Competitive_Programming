@@ -1,7 +1,7 @@
 import os
 import re
 
-path = "/home/Competitive_Programming/CPP/July/Week_1"
+path = "/home/python"
 
 for file in os.listdir(path):
 
