@@ -7,7 +7,7 @@
 //#include <math.h>
 //#include <unistd.h> //for sleep
 //#include <limits.h>
-//#include <map> <unordered_map>
+#include <map>
 //#include <set> 
 
 #define endln "\n"
@@ -53,47 +53,68 @@ int gcd(int a, int b)
 
 void solve()
 {
-    l n,val=-1,num;
+    l n;
     cin>>n;
-    string s,ans="";
+    string s,temp="";
     cin>>s;
-    vector<int>alphab(1002,0);
+
+    map<string,l> mapp;
 
     run(i,0,n-1)
     {
-        alphab[s[i]-96]++;
-
-        if(i>0)
-        {
-            num = 26*(s[i-1]-96)+s[i]-96;
-            alphab[num]++;
-        }
-        if(i>1)
-        {
-            num = 26*26*(s[i-2]-96)+26*(s[i-1]-96)+s[i]-96;
-            if(num<1002)
-                alphab[num]++;
-        }
-
-    }
-
-    run(i,1,1001)
-    {
-        if(alphab[i]==0)
-        {
-            val = l(i);
-            break;
-        }    
-    }
-    while(val>0)
-    {
-        n = val%26;
-        ans = char(96+n)+ans;
-        val = l(val/26);
-    }
-
-    cout<<ans<<endln;
+        mapp[s.substr(i,1)]++;
     
+        if(i!=n-1)
+            mapp[s.substr(i,2)]++;
+        if(1!=n-2)
+            mapp[s.substr(i,3)]++;
+    }
+
+    run(i,1,26)
+    {
+        temp = "";
+        temp+=char(96+i);
+
+        if(mapp[temp]==0)
+        {
+            cout<<temp<<endln;
+            return;
+        }
+    }
+    run(i,1,26)
+    {
+        temp="";
+        run(j,1,26)
+        {
+            temp="";
+            temp+=char(96+i);
+            temp+=char(96+j);
+            if(mapp[temp]==0)
+            {
+                cout<<temp<<endln;
+                return;
+            }
+        }
+    }
+    run(i,1,26)
+    {
+        run(j,1,26)
+        {
+            run(k,1,26)
+            {
+                temp="";
+                temp+=char(96+i);
+                temp+=char(96+j);
+                temp+=char(96+k);
+                if(mapp[temp]==0)
+                {
+                    cout<<temp<<endln;
+                    return;
+                }
+            }
+        }
+    }
+
 }
 int main()
 {
